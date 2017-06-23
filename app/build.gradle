@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 25
+  buildToolsVersion "25.0.3"
+
+  defaultConfig {
+    applicationId "is.uncommon.whatthehtml"
+    minSdkVersion 21
+    targetSdkVersion 25
+    versionCode 1
+    versionName "1.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+    }
+  }
+}
+
+ext.versions = [
+    supportLibrary: '25.4.0',
+    butterknife   : '8.6.0',
+]
+
+dependencies {
+  compile "com.android.support:appcompat-v7:$versions.supportLibrary"
+  compile "com.jakewharton:butterknife:$versions.butterknife"
+  annotationProcessor "com.jakewharton:butterknife-compiler:$versions.butterknife"
+}
